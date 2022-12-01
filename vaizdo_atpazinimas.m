@@ -1,11 +1,11 @@
 close all
 clear all
 clc
-%% raidþiø pavyzdþiø nuskaitymas ir poþymiø skaièiavimas
+%% raidziu pavyzdziu nuskaitymas ir pozymiu skaiciavimas
 %% read the image with hand-written characters
-pavadinimas = 'train_data.png';
-pozymiai_tinklo_mokymui = pozymiai_raidems_atpazinti(pavadinimas, 8);
-%% Atpaþintuvo kûrimas
+pavadinimas = 'skaiciai2.png';
+pozymiai_tinklo_mokymui = pozymiai_raidems_atpazinti(pavadinimas, 8); %% CIA KEISTA
+%% Atpazintuvo kurimas
 %% Development of character recognizer
 % poþymiai ið celiø masyvo perkeliami á matricà
 % take the features from cell-type variable and save into a matrix-type variable
@@ -15,7 +15,7 @@ P = cell2mat(pozymiai_tinklo_mokymui);
 T = [eye(11), eye(11), eye(11), eye(11), eye(11), eye(11), eye(11), eye(11)];
 % sukuriamas SBF tinklas duotiems P ir T sàryðiams
 % create an RBF network for classification with 13 neurons, and sigma = 1
-tinklas = newrb(P,T,0,1,13);
+tinklas = newrb(P,T,0,1,10); %% CIA KEISTA
 
 %% Tinklo patikra | Test of the network (recognizer)
 % skaièiuojamas tinklo iðëjimas neþinomiems poþymiams
